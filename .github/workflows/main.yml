@@ -5,6 +5,7 @@ on:
 jobs:
   checks:
     runs-on: ubuntu-latest
+    name: Node ${{ join(matrix.*, ' - ') }} - ${{ github.event_name }}
     strategy:
       matrix:
         node-version: [18, 20]
