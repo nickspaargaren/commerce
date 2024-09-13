@@ -1,7 +1,10 @@
 import React from "react";
+import { useCart } from "./useCart";
 
 const Cart = (): React.ReactElement => {
-  return <div>This is the shoppingcart component</div>;
+  const cart = useCart((state) => state.amount);
+
+  return <div>Amount: {cart}</div>;
 };
 
 export default Cart;
