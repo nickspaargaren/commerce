@@ -1,5 +1,8 @@
 {
-  "name": "commerce",
+  "name": "@nickspaargaren/commerce",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/nickspaargaren"
+  },
   "version": "1.0.0",
   "author": "Nick Spaargaren",
   "license": "MIT",
@@ -7,6 +10,9 @@
   "main": "package/index.js",
   "module": "package/index.mjs",
   "types": "package/index.d.ts",
+  "files": [
+    "package"
+  ],
   "scripts": {
     "lint": "eslint .",
     "build": "tsup src/index.ts --format cjs,esm --dts --out-dir package"
