@@ -1,3 +1,3 @@
-const text = "hello world";
+const text = "hello world" as string;
 
-console.log(text);
+export default text;
