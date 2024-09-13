@@ -4,14 +4,19 @@
   "author": "Nick Spaargaren",
   "license": "MIT",
   "packageManager": "pnpm@9.10.0+sha256.355a8ab8dbb6ad41befbef39bc4fd6b5df85e12761d2724bd01f13e878de4b13",
+  "main": "package/index.js",
+  "module": "package/index.mjs",
+  "types": "package/index.d.ts",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "tsup src/index.ts --format cjs,esm --dts --out-dir package"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
     "@types/eslint__js": "^8.42.3",
     "eslint": "^9.10.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "tsup": "^8.2.4",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.5.0"
   }
