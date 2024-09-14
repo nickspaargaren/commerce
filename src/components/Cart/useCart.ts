@@ -1,19 +1,51 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+}
+
 interface State {
-  amount: number;
+  products: Product[];
 }
 
-interface Action {
-  updateAmount: (amount: State["amount"]) => void;
+interface Actions {
+  addProduct: (product: Product) => void;
+  deleteProduct: (id: Product["id"]) => void;
+  getAmount: () => string;
 }
 
-export const useCart = create<State & Action>()(
+export const useCart = create<State & Actions>()(
   persist(
-    (set) => ({
-      amount: 0,
-      updateAmount: (amount) => set({ amount }),
+    (set, get) => ({
+      products: [],
+
+      addProduct: (product) =>
+        set((state) => ({
+          products: [...state.products, product],
+        })),
+
+      deleteProduct: (id) =>
+        set((state) => ({
+          products: state.products.filter((product) => product.id !== id),
+        })),
+
+      getAmount: () => {
+        const { products } = get();
+
+        if (products.length === 0) return parseFloat("0").toFixed(2);
+
+        const totalPrice = products.reduce(
+          (total, product) => total + product.price,
+          0,
+        );
+
+        const priceInEuros = (totalPrice / 100).toFixed(2);
+
+        return priceInEuros;
+      },
     }),
     {
       name: "cart",
