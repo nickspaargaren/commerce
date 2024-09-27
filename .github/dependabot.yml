@@ -4,6 +4,12 @@ updates:
     directory: '/'
     schedule:
         interval: 'weekly'
+    groups:
+      development-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "patch"
+          - "minor"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
