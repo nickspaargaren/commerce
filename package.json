@@ -21,21 +21,21 @@
     "coverage": "vitest run --coverage "
   },
   "devDependencies": {
-    "@eslint/js": "^9.15.0",
+    "@eslint/js": "^9.16.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/react-hooks": "^8.0.1",
     "@tsconfig/recommended": "^1.0.8",
     "@types/eslint__js": "^8.42.3",
     "@types/react": "^18.3.12",
-    "@vitest/coverage-v8": "^2.1.5",
-    "eslint": "^9.15.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.16.0",
     "eslint-plugin-prettier": "^5.2.1",
     "jsdom": "^25.0.1",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.15.0",
-    "vitest": "^2.1.5"
+    "typescript-eslint": "^8.16.0",
+    "vitest": "^2.1.8"
   },
   "dependencies": {
     "react": "^18.3.1",
